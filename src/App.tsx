@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 
 /* Core CSS required for Ionic components to work properly */
@@ -34,6 +34,10 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import Register from './pages/register/Register';
+import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import BottomBar from './pages/bottomBar/BottomBar';
+import Profile from './pages/profile/Profile';
+import ShoppingCart from './pages/shoppingCart/ShoppingCart';
 
 setupIonicReact();
 
@@ -46,6 +50,18 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/register">
           <Register />
+        </Route>
+        <Route exact path="/forgotPass">
+          <ForgotPassword />
+        </Route>
+        <Route exact path="/bottomBar">
+          <BottomBar />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
+        </Route>
+        <Route exact path="/shoppingCart">
+          <ShoppingCart />
         </Route>
         <Route exact path="/">
           <Redirect to="/login" />

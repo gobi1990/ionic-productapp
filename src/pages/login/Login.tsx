@@ -52,12 +52,17 @@ const Login: React.FC = () => {
             <IonCard>
               <IonCardContent>
                 <form onSubmit={login}>
-                  <IonInput mode="md" fill="outline" labelPlacement="floating" label="Email" type="email" placeholder="Enter Email"></IonInput>
+                  <IonInput mode="md" fill="outline" 
+                  labelPlacement="floating" 
+                  label="Email" 
+                  type="email" 
+                  placeholder="Enter Email" value={email}
+                  onIonChange={(e: CustomEvent) => setEmail(e.detail.value)}></IonInput>
                   <IonInput mode="md" className="ion-margin-top" fill="outline" labelPlacement="floating" label="Password" type="password" placeholder="Enter Password"></IonInput>
                   <IonRow className="ion-justify-content-end">
-                  <IonButton size="small" fill="clear">Forgot Password</IonButton>
+                  <IonButton routerLink="/forgotPass" size="small" fill="clear">Forgot Password</IonButton>
                   </IonRow>
-                  <IonButton type="submit" expand="block" className="login-btn">
+                  <IonButton routerLink="/bottomBar" type="button" expand="block" className="login-btn">
                     Login
                     <IonIcon icon={logInOutline} slot="start" />
                   </IonButton>
